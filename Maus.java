@@ -1,11 +1,8 @@
-package de.martin_ueding.mathematik.mausproblem;
-
 import java.awt.Color;
 
 /** 
  * Stellt eine Maus dar.
  *
- * Copyright: Martin Ueding
  */
 
 public class Maus {
@@ -54,7 +51,7 @@ public class Maus {
 	 * Setzt die Farbe auf weiß
 	 */
 	
-	public void heller () {		
+	public void heller () {
 		farbe = new Color(255, 255, 255);
 	}
 	
@@ -96,7 +93,7 @@ public class Maus {
 		
 		xp += c*x;
 		yp += c*y;
-		
+	
 		
 		if (speed >= 1.5)
 			speed /= 1.000003;

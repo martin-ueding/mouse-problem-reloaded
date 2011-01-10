@@ -1,5 +1,3 @@
-package de.martin_ueding.mathematik.mausproblem;
-
 import java.util.ResourceBundle;
 
 /**

@@ -1,5 +1,3 @@
-package de.martin_ueding.mathematik.mausproblem;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Date;
@@ -32,7 +30,7 @@ public class MausPanel extends JPanel {
 	private Date dt = new Date();
 	private long messdauer;
 
-	private Maus[] tier; 
+	private Maus[] tier;
 	
 	/**
 	 * Dieser Konstruktor legt alle Mäuse auf zufällige Stellen und gibt ihnen Farben.
