@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * Copyright: Martin Ueding
  */
 
-public class Mausproblem extends TimerTask 
+public class Mausproblem extends TimerTask {
 	
 	static MausPanel feld;
 	static int iter = 0;
