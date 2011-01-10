@@ -1,7 +1,3 @@
-package de.martin_ueding.mathematik.partikelkasten;
-
-// Copyright (c) 2009 Martin Ueding [mu@martin-ueding.de]
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
