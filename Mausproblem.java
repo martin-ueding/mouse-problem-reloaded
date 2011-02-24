@@ -1,3 +1,5 @@
+// Copyright (c) 2007 Martin Ueding <dev@martin-ueding.de>
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.Timer;
