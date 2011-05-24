@@ -5,3 +5,6 @@ mouseproblemreloaded.jar: Mausproblem.class
 
 Mausproblem.class: *.java
 	javac Mausproblem.java
+
+clean:
+	$(RM) *.class *.jar
