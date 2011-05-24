@@ -5,3 +5,6 @@ particlebox.jar: Partikelkasten.class
 
 Partikelkasten.class: *.java
 	javac Partikelkasten.java
+
+clean:
+	$(RM) *.class *.jar
