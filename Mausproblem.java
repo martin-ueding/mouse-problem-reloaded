@@ -27,7 +27,7 @@ public class Mausproblem extends TimerTask {
 	/**
 	 * Main ließt die Bilschirmgröße ein und setzt die internen Variablen für
 	 * Breite und Höhe auf die eingelesenen Werte. Danach wird die Anzahl der
-	 * Mäuse eingelen.
+	 * Mäuse eingelesen.
 	 *
 	 * Dann wird das Fenster geöffnet und ein Spielfeld eingefügt. Zu letzt
 	 * wird ein Timer gestartet, der alle 0,02 Sekunden das Bild neu aufbaut,
