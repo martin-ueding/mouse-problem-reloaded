@@ -107,13 +107,17 @@ public class MausPanel extends JPanel {
 		}
 	}
 
-	/**
-	 * Gibt an, ob sich die erste Maus innerhalb des Feldes befindet.
-	 *
-	 * @return Ob die Maus drin ist.
-	 */
 
+	/**
+	 * Tells whether the show is over for this round.
+	 */
 	public boolean innerhalb() {
-		return tier[0].getX() < 0 || tier[0].getX() > fb || tier[0].getY() < 0 || tier[0].getY() > fh;
+		int distance_sum = 0;
+		for (int i = 0; i < tier.length; i++) {
+			distance_sum += Math.pow(tier[i%tier.length].getX() - tier[(i+1)%tier.length].getX(), 2)+ Math.pow(tier[i%tier.length].getY() - tier[(i+1)%tier.length].getY(), 2);
+		}
+		System.out.println(distance_sum);
+
+		return distance_sum < 30;
 	}
 }
