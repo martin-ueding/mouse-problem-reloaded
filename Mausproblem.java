@@ -9,14 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- * Jede Maus hat einen Nachfolger, der ihr hinterher rennt. Da jede Maus einen Nachfolger
- * hat, entsteht ein Band, das am Ende auch sichtbar wird.
+ * Jede Maus hat einen Nachfolger, der ihr hinterher rennt. Da jede Maus einen
+ * Nachfolger hat, entsteht ein Band, das am Ende auch sichtbar wird.
  *
  * Copyright: Martin Ueding
  */
 
 public class Mausproblem extends TimerTask {
-	
+
 	static MausPanel feld;
 	static int iter = 0;
 	static Timer timer;
@@ -25,28 +25,30 @@ public class Mausproblem extends TimerTask {
 	static int anz;
 
 	/**
-	 * Main ließt die Bilschirmgröße ein und setzt die internen Variablen für Breite und Höhe auf die
-	 * eingelesenen Werte. Danach wird die Anzahl der Mäuse eingelen.
+	 * Main ließt die Bilschirmgröße ein und setzt die internen Variablen für
+	 * Breite und Höhe auf die eingelesenen Werte. Danach wird die Anzahl der
+	 * Mäuse eingelen.
 	 *
-	 * Dann wird das Fenster geöffnet und ein Spielfeld eingefügt. Zu letzt wird ein Timer gestartet,
-	 * der alle 0,02 Sekunden das Bild neu aufbaut, damit eine flüssige Bewegung erzeugt wird.
+	 * Dann wird das Fenster geöffnet und ein Spielfeld eingefügt. Zu letzt
+	 * wird ein Timer gestartet, der alle 0,02 Sekunden das Bild neu aufbaut,
+	 * damit eine flüssige Bewegung erzeugt wird.
 	 */
 
 	public static void main(String[] args) {
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 
 		fb = d.width;
-		fh = d.height-50;
+		fh = d.height - 50;
 
 		anz = 1000;
-		
+
 		anz = Integer.parseInt(JOptionPane.showInputDialog(Spr.get("objekte")));
 
 		feld = new MausPanel(anz, fb, fh);
 		f = new JFrame("Mausproblem");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(fb, fh);
-		f.setLocation(0,0);
+		f.setLocation(0, 0);
 		f.add(feld);
 
 		f.setVisible(true);
@@ -57,11 +59,13 @@ public class Mausproblem extends TimerTask {
 	}
 
 	/**
-	 * Diese Methode wird bei jedem Durchlauf des Timers ausgeführt, sie zeichnet nur das Feld neu.
+	 * Diese Methode wird bei jedem Durchlauf des Timers ausgeführt, sie
+	 * zeichnet nur das Feld neu.
 	 *
-	 * Wenn alle Punkte außerhalb des Feldes sind, wird das ganze neu gestartet.
+	 * Wenn alle Punkte außerhalb des Feldes sind, wird das ganze neu
+	 * gestartet.
 	 */
-	
+
 	public void run() {
 		feld.repaint();
 		iter++;
@@ -74,7 +78,7 @@ public class Mausproblem extends TimerTask {
 			feld = new MausPanel(anz, fb, fh);
 			f.getContentPane().add(feld);
 			f.setVisible(true);
-			
+
 			Maus.resetSpeed();
 			iter = 0;
 		}

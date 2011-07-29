@@ -25,15 +25,15 @@ public class MausPanel extends JPanel {
 	private int maxIter = 1;
 
 	private int fb, fh;
-	
+
 	private int frames;
-	
+
 	private Date dtstart = new Date();
 	private Date dt = new Date();
 	private long messdauer;
 
 	private Maus[] tier;
-	
+
 	/**
 	 * Dieser Konstruktor legt alle Mäuse auf zufällige Stellen und gibt ihnen Farben.
 	 *
@@ -42,18 +42,19 @@ public class MausPanel extends JPanel {
 	 * @param b Fensterhöhe
 	 */
 
-	public MausPanel (int anz, int a, int b) {
+	public MausPanel(int anz, int a, int b) {
 		tier = new Maus[anz];
 		for (tc = 0; tc < tier.length; tc++) {
 			tier[tc] = new Maus();
 		}
-		
-		fb = a; fh = b;
+
+		fb = a;
+		fh = b;
 
 
 		for (tc = 0; tc < tier.length; tc++) {
-			tier[tc].setColor((int)(Math.random()*204+51), (int)(Math.random()*204+51), (int)(Math.random()*204+51));
-			tier[tc].setPos((int)(Math.random()*fb), (int)(Math.random()*fh));
+			tier[tc].setColor((int)(Math.random() * 204 + 51), (int)(Math.random() * 204 + 51), (int)(Math.random() * 204 + 51));
+			tier[tc].setPos((int)(Math.random() * fb), (int)(Math.random() * fh));
 		}
 
 
@@ -69,10 +70,10 @@ public class MausPanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		frames++;
 		dt = new Date();
-		
+
 		messdauer = dt.getTime() - dtstart.getTime();
-		
-		g.setColor (new Color(0,0,0));
+
+		g.setColor(new Color(0, 0, 0));
 		g.fillRect(0, 0, getWidth(), getHeight());
 
 		for (tc = 0; tc < tier.length; tc++) {
@@ -88,41 +89,45 @@ public class MausPanel extends JPanel {
 
 			g.drawLine(sx, sy, ex, ey);
 		}
-		for (int anzit = 0; anzit < (int)(1000.0/maxIter); anzit++) {
-			if (ecke %4 == 0)
+		for (int anzit = 0; anzit < (int)(1000.0 / maxIter); anzit++) {
+			if (ecke % 4 == 0) {
 				tier[(int)(Math.random()*(tier.length-1))].setPos(0, 0);
-			else if (ecke %4 == 1)
+			}
+			else if (ecke % 4 == 1) {
 				tier[(int)(Math.random()*(tier.length-1))].setPos(fb, 0);
-			else if (ecke %4 == 2)
+			}
+			else if (ecke % 4 == 2) {
 				tier[(int)(Math.random()*(tier.length-1))].setPos(fb, fh);
-			else
+			}
+			else {
 				tier[(int)(Math.random()*(tier.length-1))].setPos(0, fh);
+			}
 
-			ecke = (ecke+1)%4;
+			ecke = (ecke + 1) % 4;
 		}
 
 		if (maxIter > 1000) {
 			tier[(int)(Math.random()*(tier.length-1))].heller();
 		}
-		
+
 		g.setColor(Color.WHITE);
-		g.drawString("FPS: "+(frames*1000/messdauer), 10, 30);
+		g.drawString("FPS: " + (frames * 1000 / messdauer), 10, 30);
 
 		maxIter++;
-		
-		if (frames%100 == 0) {
+
+		if (frames % 100 == 0) {
 			dtstart = dt;
 			frames = 0;
 		}
 	}
-	
+
 	/**
 	 * Gibt an, ob sich die erste Maus innerhalb des Feldes befindet.
 	 *
 	 * @return Ob die Maus drin ist.
 	 */
 
-	public boolean innerhalb () {
+	public boolean innerhalb() {
 		return tier[0].getX() < 0 || tier[0].getX() > fb || tier[0].getY() < 0 || tier[0].getY() > fh;
 	}
 }
