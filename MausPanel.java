@@ -7,8 +7,8 @@ import java.util.Date;
 import javax.swing.JPanel;
 
 /**
- * Dieses JPanel zeigt die Mäuse in Form von Linien an. Es lässt die Mäuse die neuen Positionen ausrechnen
- * und zeigt die Bewegung an.
+ * Dieses JPanel zeigt die Mäuse in Form von Linien an. Es lässt die Mäuse die
+ * neuen Positionen ausrechnen und zeigt die Bewegung an.
  *
  * Außerdem werden die Mäuse hier per Konstruktor initialisiert.
  *
@@ -35,7 +35,8 @@ public class MausPanel extends JPanel {
 	private Maus[] tier;
 
 	/**
-	 * Dieser Konstruktor legt alle Mäuse auf zufällige Stellen und gibt ihnen Farben.
+	 * Dieser Konstruktor legt alle Mäuse auf zufällige Stellen und gibt ihnen
+	 * Farben.
 	 *
 	 * @param anz Anzahl der Mäuse
 	 * @param a Fensterbreite
@@ -64,7 +65,8 @@ public class MausPanel extends JPanel {
 	}
 
 	/**
-	 * Zeichet die Mäuse. Außerdem werden sie hier bewegt und teilweise wieder zurückgesetzt.
+	 * Zeichet die Mäuse. Außerdem werden sie hier bewegt und teilweise wieder
+	 * zurückgesetzt.
 	 */
 
 	protected void paintComponent(Graphics g) {
@@ -88,22 +90,6 @@ public class MausPanel extends JPanel {
 			ey = (int)tier[tc].getY();
 
 			g.drawLine(sx, sy, ex, ey);
-		}
-		for (int anzit = 0; anzit < (int)(1000.0 / maxIter); anzit++) {
-			if (ecke % 4 == 0) {
-				tier[(int)(Math.random()*(tier.length-1))].setPos(0, 0);
-			}
-			else if (ecke % 4 == 1) {
-				tier[(int)(Math.random()*(tier.length-1))].setPos(fb, 0);
-			}
-			else if (ecke % 4 == 2) {
-				tier[(int)(Math.random()*(tier.length-1))].setPos(fb, fh);
-			}
-			else {
-				tier[(int)(Math.random()*(tier.length-1))].setPos(0, fh);
-			}
-
-			ecke = (ecke + 1) % 4;
 		}
 
 		if (maxIter > 1000) {
