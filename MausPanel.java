@@ -114,9 +114,8 @@ public class MausPanel extends JPanel {
 	public boolean innerhalb() {
 		int distance_sum = 0;
 		for (int i = 0; i < tier.length; i++) {
-			distance_sum += Math.pow(tier[i%tier.length].getX() - tier[(i+1)%tier.length].getX(), 2)+ Math.pow(tier[i%tier.length].getY() - tier[(i+1)%tier.length].getY(), 2);
+			distance_sum += Math.pow(tier[i%tier.length].getX() - tier[(i+1)%tier.length].getX(), 2) + Math.pow(tier[i%tier.length].getY() - tier[(i+1)%tier.length].getY(), 2);
 		}
-		System.out.println(distance_sum);
 
 		return distance_sum < 30;
 	}
