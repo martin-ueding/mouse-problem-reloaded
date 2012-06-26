@@ -10,7 +10,7 @@ public class MyTimerTask extends TimerTask {
 		for (int i = 0; i < Partikelkasten.p.length; i++) {
 			Partikelkasten.p[i].move();
 		}
-		
+
 		Partikelkasten.anzeige.repaint();
 	}
 

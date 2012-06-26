@@ -11,7 +11,7 @@ public class MyMouseMotionListener implements MouseMotionListener {
 	}
 
 	public void mouseMoved(MouseEvent e) {
-		
+
 		Partikelkasten.p[0].xb = e.getX();
 		Partikelkasten.p[0].yb = e.getY();
 
