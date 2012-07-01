@@ -55,7 +55,7 @@ public class Partikelkasten {
 		frame.setSize(w, h);
 		frame.add(anzeige);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		frame.setVisible(true);
+		frame.setVisible(true);
 
 		Timer timer = new Timer();
 		timer.schedule(new MyTimerTask(), 500, 50);
