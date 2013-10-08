@@ -6,5 +6,11 @@ mouseproblemreloaded.jar: Mausproblem.class
 Mausproblem.class: *.java
 	javac -encoding UTF-8 Mausproblem.java
 
+install:
+	install -d "$(DESTDIR)/usr/share/mouse-problem-reloaded"
+	install -m 644 mouseproblemreloaded.jar -t "$(DESTDIR)/usr/share/mouse-problem-reloaded"
+	install -d "$(DESTDIR)/usr/share/applications"
+	install -m 644 mouseproblemreloaded.desktop -t "$(DESTDIR)/usr/share/applications"
+
 clean:
 	$(RM) *.class *.jar
