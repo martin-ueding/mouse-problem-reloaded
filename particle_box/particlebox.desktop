@@ -3,6 +3,6 @@
 Type=Application
 Name=Mouse Problem Reloaded
 GenericName=Mouse Problem Reloaded
-Exec=java -jar /usr/share/mouse-problem-reloaded/mouseproblemreloaded.jar
+Exec=java -jar /usr/share/mouse-problem-reloaded/particlebox.jar
 Terminal=false
 Categories=Education;Science;ComputerScience;
