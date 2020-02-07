@@ -1,4 +1,4 @@
-# Copyright © 2011-2013 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011-2013 Martin Ueding <martin-ueding.de>
 
 particlebox.jar: Partikelkasten.class
 	jar -cfm $@ manifest.txt *.class *.java makefile

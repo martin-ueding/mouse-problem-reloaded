@@ -1,4 +1,4 @@
-// Copyright © 207, 2012-2013 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 207, 2012-2013 Martin Ueding <martin-ueding.de>
 
 import java.awt.Color;
 
